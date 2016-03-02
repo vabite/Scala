@@ -1,0 +1,16 @@
+package week_four
+
+object Main {
+  
+  object Lista {
+    
+    def apply(): List[Int]=List()
+    
+    def apply(x0:Int): List[Int]=List(x0)
+    
+    def apply(x0:Int, x1:Int): List[Int]=List(x0, x1)
+     
+  }
+  
+  def main(args: Array[String]): Unit = println(Lista(2,3).toString())
+}

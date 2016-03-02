@@ -1,0 +1,5 @@
+package week_two
+
+object fixed_sqrt {
+  println("Welcome to the Scala worksheet")       //> Welcome to the Scala worksheet
+}

@@ -1,0 +1,22 @@
+package objsets
+
+object prove {
+    private def splitAtHalf[T](l: List[T]):(List[T], List[T])=
+      if(l.isEmpty) throw new Error("Empty list")
+      else (l take l.length/2, l drop l.length/2)
+      
+    private def merge[T](lt: List[T], ls: List[T])(f: (T, T)=>Boolean):List[T]=
+     (lt, ls) match {
+       case (xs, List())=> xs
+       case (List(), ys)=> ys
+       case (x::xs, y::ys)=> if(f(x,y)) x::merge(xs,ls)(f) else y::merge(lt,ys)(f)
+     }
+    
+    private def sort[T](l: List[T])(f: (T, T)=>Boolean):List[T]={
+      val splitted = splitAtHalf(l)
+      merge(splitted._1, splitted._2)(f)
+    }
+    
+    val myList=List(0,33,5,2,5,-1)
+    println(sort(myList)((x,y)=>x>y))
+}

@@ -1,0 +1,15 @@
+package week_two
+
+object tail_general {
+  def reduce(facc:(Int, Int) => Int, fnext: Int => Int, start: Int, end: Int): Int={
+  	def loop(next: Int, acc: Int): Int=
+  		if(next>end) acc
+  		else loop(next+1, facc(acc, fnext(next)))
+  	loop(start, 1)
+  }                                               //> reduce: (facc: (Int, Int) => Int, fnext: Int => Int, start: Int, end: Int)In
+                                                  //| t
+  
+  def factorial(n: Int): Int = reduce((x, y) => x*y, x=> x, 1, n)
+                                                  //> factorial: (n: Int)Int
+  factorial(0)                                    //> res0: Int = 1
+}

@@ -1,0 +1,32 @@
+package week_one
+
+object ex3 {
+	def chang(tot: Int, coins: List[Int])={
+		def loop(amount: Int, values: List[Int], count: Int): Int={
+			println("amount", amount, "head", values.head, "tail", values, "count", count)
+			if(values.isEmpty || count>5) {println("line"); count}
+		  if(amount==0) count+1
+		  else if(amount<0 || values.isEmpty) count
+		  else loop(amount-values.head, values, count)+loop(amount, values.tail, count)
+		  }
+    loop(tot, coins, 0)
+   }                                              //> chang: (tot: Int, coins: List[Int])Int
+   chang(3, List(1, 2))                           //> (amount,3,head,1,tail,List(1, 2),count,0)
+                                                  //| (amount,2,head,1,tail,List(1, 2),count,0)
+                                                  //| (amount,1,head,1,tail,List(1, 2),count,0)
+                                                  //| (amount,0,head,1,tail,List(1, 2),count,0)
+                                                  //| (amount,1,head,2,tail,List(2),count,0)
+                                                  //| (amount,-1,head,2,tail,List(2),count,0)
+                                                  //| java.util.NoSuchElementException: head of empty list
+                                                  //| 	at scala.collection.immutable.Nil$.head(List.scala:420)
+                                                  //| 	at scala.collection.immutable.Nil$.head(List.scala:417)
+                                                  //| 	at week_one.ex3$$anonfun$main$1.loop$1(week_one.ex3.scala:6)
+                                                  //| 	at week_one.ex3$$anonfun$main$1.loop$1(week_one.ex3.scala:10)
+                                                  //| 	at week_one.ex3$$anonfun$main$1.loop$1(week_one.ex3.scala:10)
+                                                  //| 	at week_one.ex3$$anonfun$main$1.loop$1(week_one.ex3.scala:10)
+                                                  //| 	at week_one.ex3$$anonfun$main$1.loop$1(week_one.ex3.scala:10)
+                                                  //| 	at week_one.ex3$$anonfun$main$1.chang$1(week_one.ex3.scala:12)
+                                                  //| 	at week_one.ex3$$anonfun$main$1.apply$mcV$sp(week_one.ex3.scala:14)
+                                                  //| 	at org.scalaide.worksheet.runtime.library.WorksheetSupport$$anonfun$$e
+                                                  //| Output exceeds cutoff limit.
+ }

@@ -1,0 +1,8 @@
+
+object prove {
+	def checkCol(col: Int, queens: List[Int]): Boolean={ //> Vector()
+		val deltaRows=queens.length
+		if((queens contains col) || (col==queens.head-queens.length)) false
+		else true
+		}
+}

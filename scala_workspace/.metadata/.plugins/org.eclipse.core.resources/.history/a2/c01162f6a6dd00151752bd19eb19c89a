@@ -1,0 +1,7 @@
+package patmat
+
+import Huffman.decodeSecret
+
+object prove {
+  println(decodeSecret.isInstanceOf[Int])
+}

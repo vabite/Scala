@@ -1,0 +1,8 @@
+package week_two
+
+object tail_product {
+  def productLoop(f: Double => Double, s: Int, e: Int): Double={
+  	if(s>e) 0
+  	else f(s)*productLoop(s+1)
+  }
+}

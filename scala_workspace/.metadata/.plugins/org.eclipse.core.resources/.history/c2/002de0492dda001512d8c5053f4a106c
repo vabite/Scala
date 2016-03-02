@@ -1,0 +1,33 @@
+package week_three
+
+
+
+trait Lista[T] {
+  def isEmpty: Boolean
+  def head: T
+  def tail: Lista[T]
+  def nth(n: Int): T={
+    def iter(i: Int, t: Lista[T]): T=
+      if(t.isEmpty) throw new Error("List index out of range")
+      else if(i==0) head
+      else iter(i-1, t.tail)
+    iter(n, this)    
+  }
+}
+
+class Cons[T](val head: T, val tail: Lista[T]) extends Lista[T]{
+  def isEmpty=false
+}
+
+class Nil[T] extends Lista[T]{
+  def isEmpty=true
+  def head: Nothing=throw new NoSuchElementException("Nil.head")
+  def tail: Nothing=throw new NoSuchElementException("Nil.tail")
+}
+
+object list {
+  def main()={
+    val l=Lista[Int](1,2,3,4,5,6)
+    l.nth(0)
+  }  
+}

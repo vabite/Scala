@@ -1,0 +1,12 @@
+package week_four
+
+object Naturals {
+  
+  abstract class Nat {
+    def isZero(n: Nat): Boolean
+    def predecessor: Nat
+    def successor: Nat
+    def + (that: Nat): Nat
+    def - (that: Nat): Nat
+  }
+}

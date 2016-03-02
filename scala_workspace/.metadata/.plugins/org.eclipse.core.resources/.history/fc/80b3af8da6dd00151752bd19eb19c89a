@@ -1,0 +1,7 @@
+package patmat
+
+import Huffman._
+
+object prove {
+  println(decodeSecret)                           //> Welcome to the Scala worksheet
+}

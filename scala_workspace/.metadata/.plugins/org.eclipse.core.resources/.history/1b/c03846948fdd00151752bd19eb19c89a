@@ -1,0 +1,40 @@
+package objsets
+
+object prove {
+
+    def splitAtHalf[T](l: List[T]):(List[T], List[T])=
+      if(l.isEmpty) (List(), List())
+      else (l take l.length/2, l drop l.length/2) //> splitAtHalf: [T](l: List[T])(List[T], List[T])
+      
+    def merge(lt: List[Int], ls: List[Int]):List[Int]=
+     (lt, ls) match {
+       case (xs, List())=> xs
+       case (List(), ys)=> ys
+       case (x::xs, y::ys)=> {
+       	if(x > y) x::merge(xs,ls)
+       	else y::merge(lt,ys)}
+     }                                            //> merge: (lt: List[Int], ls: List[Int])List[Int]
+    
+    def sort(l: List[Int]):List[Int]={
+      val splitted = splitAtHalf(l)
+      merge(sort(splitted._1), sort(splitted._2))
+    }                                             //> sort: (l: List[Int])List[Int]
+    
+    val l=List(0,1)                               //> l  : List[Int] = List(0, 1, 2, 3)
+    println("ciao", sort(l))                      //> java.lang.StackOverflowError
+                                                  //| 	at objsets.prove$$anonfun$main$1.splitAtHalf$1(objsets.prove.scala:6)
+                                                  //| 	at objsets.prove$$anonfun$main$1.sort$1(objsets.prove.scala:19)
+                                                  //| 	at objsets.prove$$anonfun$main$1.sort$1(objsets.prove.scala:20)
+                                                  //| 	at objsets.prove$$anonfun$main$1.sort$1(objsets.prove.scala:20)
+                                                  //| 	at objsets.prove$$anonfun$main$1.sort$1(objsets.prove.scala:20)
+                                                  //| 	at objsets.prove$$anonfun$main$1.sort$1(objsets.prove.scala:20)
+                                                  //| 	at objsets.prove$$anonfun$main$1.sort$1(objsets.prove.scala:20)
+                                                  //| 	at objsets.prove$$anonfun$main$1.sort$1(objsets.prove.scala:20)
+                                                  //| 	at objsets.prove$$anonfun$main$1.sort$1(objsets.prove.scala:20)
+                                                  //| 	at objsets.prove$$anonfun$main$1.sort$1(objsets.prove.scala:20)
+                                                  //| 	at objsets.prove$$anonfun$main$1.sort$1(objsets.prove.scala:20)
+                                                  //| 	at objsets.prove$$anonfun$main$1.sort$1(objsets.prove.scala:20)
+                                                  //| 	at objsets.prove$$anonfun$main$1.sort$1(objsets.prove.scala:20)
+                                                  //| 	at objsets.prove$$anonfun$main$1.sort$1(objsets.prove.scala
+                                                  //| Output exceeds cutoff limit.
+ }

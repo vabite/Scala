@@ -1,0 +1,16 @@
+package week_one
+
+object ex3 {
+	def chang(tot: Int, coins: List[Int])={
+		def loop(amount: Int, values: List[Int], count: Int): Int={
+			println("amount", amount, "head", values.head, "tail", values, "count", count)
+			if(values.isEmpty || count>5) {println("line"); count}
+			//else if(amount<0) loop(tot, values.tail, count)
+			else if(amount<0) count
+		  else if(amount==0) loop(amount-values.head, values, count+1)
+		  else loop(amount-values.head, coins, count)
+		  }
+    loop(tot, coins, 0)
+   }
+   chang(3, List(1, 2))
+ }

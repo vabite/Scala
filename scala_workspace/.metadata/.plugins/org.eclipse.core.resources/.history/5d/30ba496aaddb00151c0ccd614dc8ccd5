@@ -1,0 +1,23 @@
+package week_four
+
+object pattern {
+  class Expr{
+    def showPar: String = "("+this.show+")"
+       
+  	def show: String = this match {
+  	  case Prod(e1, e2) => 
+  	    //(if(e1.isInstanceOf[Sum]) "("+e1.show+")" else e1.show)+" * "+ 
+  	    //(if(e2.isInstanceOf[Sum]) "("+e2.show+")" else e2.show)
+    	case Sum(e1, e2) => e1.show+" + "+e2.show
+    	case Number(n) => n.toString
+    	case Var(id) => id
+  	}
+  }		
+  case class Sum(e1: Expr, e2: Expr) extends Expr	
+  case class Number(n: Int) extends Expr
+  case class Var(id: String) extends Expr
+  case class Prod(e1: Expr, e2: Expr) extends Expr
+  
+  def main(args: Array[String]): Unit = println(Prod(Number(5), Sum(Number(5), Number(6))).show)
+  
+}

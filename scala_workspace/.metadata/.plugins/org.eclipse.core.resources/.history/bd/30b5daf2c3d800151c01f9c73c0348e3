@@ -1,0 +1,6 @@
+package week_one
+
+object exs extends App {
+  
+  print(ex1.pascal(0, 0))
+}

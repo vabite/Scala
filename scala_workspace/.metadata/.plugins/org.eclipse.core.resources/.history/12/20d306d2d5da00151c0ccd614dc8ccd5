@@ -1,0 +1,10 @@
+package week_four
+
+object List {
+  
+  def apply(): List[Int]=List()
+  
+  def apply(x0:Int): List[Int]=List(x0)
+  
+  def apply(x0:Int, x1:Int): List[Int]=List(x0, x1)
+}

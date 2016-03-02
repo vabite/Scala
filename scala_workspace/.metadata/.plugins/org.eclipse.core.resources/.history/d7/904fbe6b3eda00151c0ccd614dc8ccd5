@@ -1,0 +1,9 @@
+package week_two
+
+object ex1 {
+  
+  def singletonSet(elem: Int): Set[Int]={
+      
+    
+  }
+}

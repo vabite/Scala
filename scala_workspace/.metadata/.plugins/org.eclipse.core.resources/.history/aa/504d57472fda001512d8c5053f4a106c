@@ -1,0 +1,10 @@
+package week_three
+
+
+trait Lista[T] {
+
+}
+
+
+
+

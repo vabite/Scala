@@ -1,0 +1,10 @@
+package patmat
+
+import Huffman.decodedSecret
+
+object prove {
+  println(decodedSecret)                          //> List()
+  
+  
+  
+}

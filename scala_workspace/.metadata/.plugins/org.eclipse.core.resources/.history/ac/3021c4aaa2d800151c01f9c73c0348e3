@@ -1,0 +1,17 @@
+package week_two
+
+object rationals {
+  val r = new Rational(2, 3)                      //> r  : week_two#35.Rational#687269 = week_two.Rational@73c6c3b2
+}
+
+class Rational(x: Int, y: Int){
+	def numer=x
+	def denom=y
+	
+	def add(that: Rational)=
+		new Rational(
+			numer*that.denom + that.numer * denom,
+			denom * that.denom
+		)
+	//def toString=numer+"/"+denom
+}

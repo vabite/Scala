@@ -1,0 +1,17 @@
+package week_three
+import common._
+
+object nth {
+
+  def nth(n: Int, l: List[Int]): Int={
+    if(l.isEmpty) throw new Error("List index out of range")
+    else if(n==0) l.head
+    else nth(n-1, l.tail)
+  }
+
+  def main(args :Array[String]): Unit={
+    var l=List[Int](0,1,2,3,4,5)
+    println(nth(5, l)+1)
+  }
+  
+}

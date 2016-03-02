@@ -1,0 +1,6 @@
+package week_one
+
+object Main extends App {
+  def pascal(r: Int, c: Int): Int= if(r==0 || c==0) 1 else pascal(r-1, c-1)
+  println(pascal(0 , 0))
+}

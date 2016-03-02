@@ -1,0 +1,12 @@
+package patmat
+
+import Huffman.decodedSecret
+
+object prove {
+	def isPrime(n: Int)= 2 to n foreach (d => n%d!=0)
+                                                  //> isPrime: (n: Int)Unit
+	def primePairs(n: Int)=1 to n map (i => 1 to i map (j => (j, i)))// flatMap(x=>x) filter(isPrime)
+                                                  //> primePairs: (n: Int)scala.collection.immutable.IndexedSeq[scala.collection.i
+                                                  //| mmutable.IndexedSeq[(Int, Int)]]
+  primePairs(2)
+}

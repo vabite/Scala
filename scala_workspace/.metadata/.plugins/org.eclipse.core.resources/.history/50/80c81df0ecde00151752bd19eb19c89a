@@ -1,0 +1,5 @@
+package week_six
+
+object prove {
+  println("Welcome to the Scala worksheet")
+}

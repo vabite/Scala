@@ -1,0 +1,11 @@
+package week_one
+
+object tail_factorial {
+  def factorial(rest: Int, cum: Int): Int={
+  	if(rest==0) cum
+  	else factorial(rest-1, rest*cum)
+  	}                                         //> factorial: (rest: Int, cum: Int)Int
+  	
+  factorial(0, 1)                                 //> res0: Int = 1
+  
+  }

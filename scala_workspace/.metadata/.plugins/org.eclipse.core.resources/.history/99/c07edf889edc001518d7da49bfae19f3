@@ -1,0 +1,16 @@
+package week_five
+
+object flatten {
+  def flatten[T](l: List[T]):List[Any]=
+    l match {
+      case Nil => Nil
+      case List(y) :: ys => flatten(List(y)) ::: flatten(ys)
+      case y::ys => y::flatten(ys)
+  }
+  
+  def main(args: Array[String])={
+    val l = List(List(1,2), List(3), 4, 5, List(), 6)
+    val t = List(List(0), 1)
+    println(t)
+  }
+}

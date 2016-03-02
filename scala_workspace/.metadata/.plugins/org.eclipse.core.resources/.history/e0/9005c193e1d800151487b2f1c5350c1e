@@ -1,0 +1,36 @@
+package week_one
+
+object ex3 {
+	def chang(tot: Int, coins: List[Int])={
+		def loop(amount: Int, values: List[Int], count: Int): Int={
+			println("amount", amount, "head", values.head, "tail", values, "count", count)
+			if(values.isEmpty || count>5) {println("line"); count}
+			else if(amount<0 && !values.tail.isEmpty) loop(tot, values.tail, count)
+		  else if(amount==0 && !values.tail.isEmpty) loop(tot, values.tail, count+1)
+		  else loop(amount-values.head, coins, count)
+		  }
+    loop(tot, coins, 0)
+   }                                              //> chang: (tot: Int, coins: List[Int])Int
+   chang(3, List(1, 2))                           //> (amount,3,head,1,tail,List(1, 2),count,0)
+                                                  //| (amount,2,head,1,tail,List(1, 2),count,0)
+                                                  //| (amount,1,head,1,tail,List(1, 2),count,0)
+                                                  //| (amount,0,head,1,tail,List(1, 2),count,0)
+                                                  //| (amount,3,head,2,tail,List(2),count,1)
+                                                  //| (amount,1,head,1,tail,List(1, 2),count,1)
+                                                  //| (amount,0,head,1,tail,List(1, 2),count,1)
+                                                  //| (amount,3,head,2,tail,List(2),count,2)
+                                                  //| (amount,1,head,1,tail,List(1, 2),count,2)
+                                                  //| (amount,0,head,1,tail,List(1, 2),count,2)
+                                                  //| (amount,3,head,2,tail,List(2),count,3)
+                                                  //| (amount,1,head,1,tail,List(1, 2),count,3)
+                                                  //| (amount,0,head,1,tail,List(1, 2),count,3)
+                                                  //| (amount,3,head,2,tail,List(2),count,4)
+                                                  //| (amount,1,head,1,tail,List(1, 2),count,4)
+                                                  //| (amount,0,head,1,tail,List(1, 2),count,4)
+                                                  //| (amount,3,head,2,tail,List(2),count,5)
+                                                  //| (amount,1,head,1,tail,List(1, 2),count,5)
+                                                  //| (amount,0,head,1,tail,List(1, 2),count,5)
+                                                  //| (amount,3,head,2,tail,List(2),count,6)
+                                                  //| line
+                                                  //| res0: Int = 6
+}

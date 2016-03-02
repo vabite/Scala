@@ -1,0 +1,30 @@
+package week_one
+
+object ex3 {
+	def chang(tot: Int, coins: List[Int])={
+		def loop(amount: Int, values: List[Int], count: Int): Int={
+			println("amount", amount, "head", values.head, "tail", values.isEmpty, "count", count)
+			if(values.isEmpty || count>5) {println("line"); count}
+			else if(amount<0) loop(tot, values.tail, count)
+		  else if(amount==0) loop(tot, values.tail, count+1)
+		  else loop(amount-values.head, coins, count)
+		  }
+    loop(tot, coins, 0)
+   }                                              //> chang: (tot: Int, coins: List[Int])Int
+   chang(2, List(1, 2))                           //> (amount,2,head,1,tail,false,count,0)
+                                                  //| (amount,1,head,1,tail,false,count,0)
+                                                  //| (amount,0,head,1,tail,false,count,0)
+                                                  //| (amount,2,head,2,tail,false,count,1)
+                                                  //| (amount,0,head,1,tail,false,count,1)
+                                                  //| (amount,2,head,2,tail,false,count,2)
+                                                  //| (amount,0,head,1,tail,false,count,2)
+                                                  //| (amount,2,head,2,tail,false,count,3)
+                                                  //| (amount,0,head,1,tail,false,count,3)
+                                                  //| (amount,2,head,2,tail,false,count,4)
+                                                  //| (amount,0,head,1,tail,false,count,4)
+                                                  //| (amount,2,head,2,tail,false,count,5)
+                                                  //| (amount,0,head,1,tail,false,count,5)
+                                                  //| (amount,2,head,2,tail,false,count,6)
+                                                  //| line
+                                                  //| res0: Int = 6
+}

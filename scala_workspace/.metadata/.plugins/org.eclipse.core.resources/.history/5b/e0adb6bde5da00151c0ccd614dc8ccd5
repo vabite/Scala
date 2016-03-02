@@ -1,0 +1,33 @@
+package week_four
+
+object Naturals {
+  
+  abstract class Nat {
+    def isZero(n: Nat): Boolean
+    def predecessor: Nat
+    def successor: Nat
+    def + (that: Nat): Nat
+    def - (that: Nat): Nat
+  }
+  
+  object Zero extends Nat {
+    def isZero(n: Nat): Boolean=true
+    def predecessor: Nothing=throw new Error("no predecessor of zero")
+    //def successor: Succ
+    def + (that: Nat): Nat = that
+    //def - (that: Nat): Nat
+  }
+  
+  class Succ(n: Nat) extends Nat{
+    def isZero(n: Nat): Boolean=false
+    def predecessor: Nat
+    def successor: Succ
+    def + (that: Nat): Nat={
+      def loop(rest: Nat, cum: Succ): Succ=
+        if(isZero(rest)) cum 
+        else loop(rest.predecessor, cum.successor)
+      loop(that, this)
+    }
+    def - (that: Nat): Nat
+  }
+}

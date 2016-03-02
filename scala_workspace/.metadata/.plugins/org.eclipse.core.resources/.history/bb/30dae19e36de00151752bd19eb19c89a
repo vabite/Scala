@@ -1,0 +1,9 @@
+package patmat
+
+import Huffman.decodedSecret
+
+object prove {
+	val n = 2
+  1 to n map (i => 1 to i map (j => (j, i))) flattenMap (x=>x)
+    
+}

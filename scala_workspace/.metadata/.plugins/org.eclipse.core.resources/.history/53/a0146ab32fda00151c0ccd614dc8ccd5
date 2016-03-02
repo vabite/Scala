@@ -1,0 +1,10 @@
+package week_three
+
+class Nil {
+  class Nil[T] extends Lista[T]{
+    def isEmpty=true
+    def head: Nothing=throw new NoSuchElementException("Nil.head")
+    def tail: Nothing=throw new NoSuchElementException("Nil.tail")
+  }
+  
+}

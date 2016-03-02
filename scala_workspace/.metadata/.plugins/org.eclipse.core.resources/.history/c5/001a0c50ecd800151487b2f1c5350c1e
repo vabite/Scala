@@ -1,0 +1,25 @@
+package week_one
+
+object ex3 {
+	def change(tot: Int, coins: List[Int])={
+		def loop(amount: Int, values: List[Int], count: Int): Int={
+			val namount=amount-values.head
+			println(amount, values.head, count)
+		  if(amount<0)
+		  	if(values.isEmpty) count
+		  	else loop(tot, values.tail, count)
+		  else if(amount==0)
+		  	if(!values.isEmpty) count + 1
+		  	else loop(tot, values.tail, count+1)
+		  else
+		  	if(values.isEmpty) count
+		  	else loop(amount-values.head, values, count)
+		  }
+    loop(tot, coins, 0)
+   }                                              //> change: (tot: Int, coins: List[Int])Int
+   change(3, List(1, 2))                          //> (3,1,0)
+                                                  //| (2,1,0)
+                                                  //| (1,1,0)
+                                                  //| (0,1,0)
+                                                  //| res0: Int = 1
+}

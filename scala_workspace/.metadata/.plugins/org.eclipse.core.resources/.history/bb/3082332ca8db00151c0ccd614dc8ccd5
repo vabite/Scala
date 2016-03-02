@@ -1,0 +1,18 @@
+package week_four
+
+object pattern {
+  class Expr{
+  	def show: String = this match {
+    	case Sum(e1, e2) => e1.show+"+"+e2.show
+    	case Prod(e1, e2) => e1.show+"*"+e2.show
+    	case Number(n) => n.toString
+    	case Var(id) => id
+  	}
+  }		
+  case class Sum(e1: Number, e2: Number) extends Expr	
+  case class Number(n: Int) extends Expr
+  case class Var(id: String) extends Expr
+  case class Prod(e1: Number, e2: Number)
+  
+  def main(args: Array[String]): Unit = println(Sum(Number(5), Number(6)).show)
+}

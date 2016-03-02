@@ -1,0 +1,10 @@
+package week_two
+
+object tail_product {
+  def product(f: Int => Int, start: Int)(end: => Int): Int={
+  	if(end<start) 1 else start*product(f, start+1)(end)
+  }                                               //> product: (f: Int => Int, start: Int)(end: Int)Int
+  
+  def factorial = product(x => x, 1)              //> factorial: (n: Int)Int
+  factorial(3)                                    //> res0: Int = 6
+}

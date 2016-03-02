@@ -1,0 +1,5 @@
+package week_two
+
+object curry_general {
+  println("Welcome to the Scala worksheet")
+}

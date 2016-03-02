@@ -1,0 +1,11 @@
+package patmat
+
+import Huffman.decodedSecret
+
+object prove {
+  1 to n map (i => 1 to i map (j => (j, i))       //> Decoded secret: List(h, u, f, f, m, a, n, e, s, t, c, o, o, l)
+                                                  //| List(h, u, f, f, m, a, n, e, s, t, c, o, o, l)
+  
+  
+  
+}

@@ -1,0 +1,7 @@
+package week_six
+
+import week6
+
+object telnum {
+  
+}

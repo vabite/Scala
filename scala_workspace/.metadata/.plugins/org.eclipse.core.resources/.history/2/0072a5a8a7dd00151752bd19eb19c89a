@@ -1,0 +1,28 @@
+package patmat
+
+import Huffman.decodedSecret
+
+object prove {
+  println(decodedSecre)                           //> java.lang.StackOverflowError
+                                                  //| 	at scala.collection.immutable.List.drop(List.scala:221)
+                                                  //| 	at patmat.Huffman$.decode(Huffman.scala:196)
+                                                  //| 	at patmat.Huffman$.decode(Huffman.scala:196)
+                                                  //| 	at patmat.Huffman$.decode(Huffman.scala:196)
+                                                  //| 	at patmat.Huffman$.decode(Huffman.scala:196)
+                                                  //| 	at patmat.Huffman$.decode(Huffman.scala:196)
+                                                  //| 	at patmat.Huffman$.decode(Huffman.scala:196)
+                                                  //| 	at patmat.Huffman$.decode(Huffman.scala:196)
+                                                  //| 	at patmat.Huffman$.decode(Huffman.scala:196)
+                                                  //| 	at patmat.Huffman$.decode(Huffman.scala:196)
+                                                  //| 	at patmat.Huffman$.decode(Huffman.scala:196)
+                                                  //| 	at patmat.Huffman$.decode(Huffman.scala:196)
+                                                  //| 	at patmat.Huffman$.decode(Huffman.scala:196)
+                                                  //| 	at patmat.Huffman$.decode(Huffman.scala:196)
+                                                  //| 	at patmat.Huffman$.decode(Huffman.scala:196)
+                                                  //| 	at patmat.Huffman$.decode(Huffman.scala:196)
+                                                  //| 	at patmat.Huffman$.decode(Huffman.scala:196)
+                                                  //| 	at patmat.Huffman$.decode(Huffman.scala:196)
+                                                  //| 	at patmat.Huffman$.decode(Huffman.scala:196)
+                                                  //| 	at patmat.Huffman$.dec
+                                                  //| Output exceeds cutoff limit.
+}

@@ -1,0 +1,7 @@
+package week_one
+
+object trial {
+    def pascal(r: Int, c: Int): Int= if(c==0 || c==r) 1 else pascal(r-1, c)+pascal(r, c-1)
+                                                  //> pascal: (r: Int, c: Int)Int
+  	println(pascal(2 , 2))                    //> 1
+}

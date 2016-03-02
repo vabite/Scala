@@ -1,0 +1,22 @@
+package week_two
+
+object rationals {
+  val ra=new Rational(1, 3)                       //> ra  : week_two#35.Rational#687269 = 1/3
+  val rb=new Rational(5, 7)                       //> rb  : week_two#35.Rational#687269 = 5/7
+  var rc=new Rational(3, 2)                       //> rc  : week_two#35.Rational#687269 = 3/2
+  ra.sub(rb).sub(rc)                              //> res0: week_two#35.Rational#687269 = -8/21
+}
+
+class Rational(x: Int, y: Int){
+	def numer=x
+	def denom=y
+	
+	def neg=new Rational(-numer, denom)
+	def add(that: Rational)=
+		new Rational(
+			numer*that.denom + that.numer * denom,
+			denom * that.denom
+		)
+	def sub(that: Rational)=add(that.neg)
+	override def toString=numer+"/"+denom
+}

@@ -1,0 +1,34 @@
+package week_one
+
+object ex3 {
+	def change(tot: Int, coins: List[Int])={
+		def loop(amount: Int, values: List[Int], count: Int): Int={
+			println(values.head)
+		  if(values.isEmpty) {println(count); count}
+		  else if(amount<0) loop(amount, values.tail, count)
+		  else if(amount==0) loop(amount, values.tail, count+1)
+		  else loop(amount-values.head, values, count)
+		  }
+    loop(tot, coins, 0)
+   }                                              //> change: (tot: Int, coins: List[Int])Int
+   change(4, List(1, 2))                          //> 1
+                                                  //| 1
+                                                  //| 1
+                                                  //| 1
+                                                  //| 1
+                                                  //| 2
+                                                  //| java.util.NoSuchElementException: head of empty list
+                                                  //| 	at scala.collection.immutable.Nil$.head(List.scala:420)
+                                                  //| 	at scala.collection.immutable.Nil$.head(List.scala:417)
+                                                  //| 	at week_one.ex3$$anonfun$main$1.loop$1(week_one.ex3.scala:6)
+                                                  //| 	at week_one.ex3$$anonfun$main$1.change$1(week_one.ex3.scala:12)
+                                                  //| 	at week_one.ex3$$anonfun$main$1.apply$mcV$sp(week_one.ex3.scala:14)
+                                                  //| 	at org.scalaide.worksheet.runtime.library.WorksheetSupport$$anonfun$$exe
+                                                  //| cute$1.apply$mcV$sp(WorksheetSupport.scala:76)
+                                                  //| 	at org.scalaide.worksheet.runtime.library.WorksheetSupport$.redirected(W
+                                                  //| orksheetSupport.scala:65)
+                                                  //| 	at org.scalaide.worksheet.runtime.library.WorksheetSupport$.$execute(Wor
+                                                  //| ksheetSupport.scala:75)
+                                                  //| 	at week_one.ex3$.main(week_one.ex3.scala:3)
+                                                  //| 	at week_one.ex3.main(week_one.ex3.scala)
+}

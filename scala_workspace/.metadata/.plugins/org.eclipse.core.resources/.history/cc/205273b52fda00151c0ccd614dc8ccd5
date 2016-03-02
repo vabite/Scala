@@ -1,0 +1,7 @@
+package week_three
+
+trait Lista[T] {
+  def isEmpty: Boolean
+  def head: T
+  def tail: List[T]
+}

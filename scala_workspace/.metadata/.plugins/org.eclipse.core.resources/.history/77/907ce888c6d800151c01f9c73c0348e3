@@ -1,0 +1,22 @@
+package week_one
+
+object trial {
+    def pascal(c: Int, r: Int): Int= if(c==0 || c==r) 1 else pascal(c-1, r)+pascal(c, r-1)
+                                                  //> pascal: (c: Int, r: Int)Int
+  	println(pascal(1 , 2))                    //> java.lang.StackOverflowError
+                                                  //| 	at week_one.trial$$anonfun$main$1.pascal$1(week_one.trial.scala:4)
+                                                  //| 	at week_one.trial$$anonfun$main$1.pascal$1(week_one.trial.scala:4)
+                                                  //| 	at week_one.trial$$anonfun$main$1.pascal$1(week_one.trial.scala:4)
+                                                  //| 	at week_one.trial$$anonfun$main$1.pascal$1(week_one.trial.scala:4)
+                                                  //| 	at week_one.trial$$anonfun$main$1.pascal$1(week_one.trial.scala:4)
+                                                  //| 	at week_one.trial$$anonfun$main$1.pascal$1(week_one.trial.scala:4)
+                                                  //| 	at week_one.trial$$anonfun$main$1.pascal$1(week_one.trial.scala:4)
+                                                  //| 	at week_one.trial$$anonfun$main$1.pascal$1(week_one.trial.scala:4)
+                                                  //| 	at week_one.trial$$anonfun$main$1.pascal$1(week_one.trial.scala:4)
+                                                  //| 	at week_one.trial$$anonfun$main$1.pascal$1(week_one.trial.scala:4)
+                                                  //| 	at week_one.trial$$anonfun$main$1.pascal$1(week_one.trial.scala:4)
+                                                  //| 	at week_one.trial$$anonfun$main$1.pascal$1(week_one.trial.scala:4)
+                                                  //| 	at week_one.trial$$anonfun$main$1.pascal$1(week_one.trial.scala:4)
+                                                  //| 	at week_one.trial$$anonfun
+                                                  //| Output exceeds cutoff limit.
+}

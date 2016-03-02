@@ -1,0 +1,16 @@
+package week_one
+
+object tail_factorial {
+
+	def factorial(n: Int){
+	
+	  def factorialIter(rest: Int, cum: Int): Int={
+	  	if(rest==0) cum
+	  	else factorialIter(rest-1, rest*cum)
+	  }
+	  	
+	  factorialIter(n, 1)
+	 }                                        //> factorialIter: ()Unit
+  }
+  
+  

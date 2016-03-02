@@ -1,0 +1,7 @@
+import Huffman.decodedSecret
+
+object prove {
+	def isPrime(n: Int): Boolean= 2 to n forall (d => n%d!=0)
+	def primePairs(n: Int): Seq[(Int, Int)]=1 to n map (i => 1 to i map (j => (j, i))) flatMap(x=>x) filter(x => isPrime(x._1+x._2))
+  println(primePairs(2))
+}

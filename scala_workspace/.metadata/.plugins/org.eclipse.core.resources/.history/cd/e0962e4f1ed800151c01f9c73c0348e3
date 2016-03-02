@@ -1,0 +1,20 @@
+package week_two
+
+object tail_general { //forse cìè un modo per non passare acc0 e di ricavarlo internamente come elemento neutro della funzione facc
+  def acc(fa:(Int, Int) => Int, cum0: Int):(Int => Int)=>(Int, Int)=>Int ={
+    def weighted_acc(fw: Int => Int):((Int, Int)=>Int) ={
+    	def run(start: Int, end: Int) ={
+  			def loop(next: Int, cum: Int): Int=
+  				if(next>end) cum0
+  				else loop(next+1, fa(cum, fw(next)))
+  			loop(start, cum0)
+  		}
+  		run
+  	}
+  	weighted_acc
+  }                                               //> acc: (fa: (Int, Int) => Int, cum0: Int)(Int => Int) => ((Int, Int) => Int)
+	def product= acc((x, y) => x*y, 1)        //> product: => (Int => Int) => ((Int, Int) => Int)
+  def sum= acc((x, y) => x+y, 0)                  //> sum: => (Int => Int) => ((Int, Int) => Int)
+	def factorial= product(x => x)            //> factorial: => (Int, Int) => Int
+	sum(x=>x)( 4, 5)                          //> res0: Int = 1
+}

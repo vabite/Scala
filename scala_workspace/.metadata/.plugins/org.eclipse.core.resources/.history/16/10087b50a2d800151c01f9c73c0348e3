@@ -1,0 +1,5 @@
+package week_two
+
+object rationals {
+  println("Welcome to the Scala worksheet")       //> Welcome to the Scala worksheet
+}

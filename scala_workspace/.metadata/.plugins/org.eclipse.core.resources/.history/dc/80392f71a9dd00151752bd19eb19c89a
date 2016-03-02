@@ -1,0 +1,8 @@
+package patmat
+
+import Huffman.decodedSecret
+
+object prove {
+  println(decodedSecret)                          //> java.lang.StackOverflowError
+  
+}

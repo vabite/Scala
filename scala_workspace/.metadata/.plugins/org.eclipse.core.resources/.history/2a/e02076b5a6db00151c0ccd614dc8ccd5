@@ -1,0 +1,16 @@
+package week_four
+
+object pattern {
+  class Expr{
+  	def toString= this match {
+    	case Sum(e1, e2) => e1.toString+"+"+e2.toString
+    	case Number(n) => n.toString
+  	}
+  }
+  		
+  case class Sum(val e1: Number, val e2: Number) extends Expr
+  	
+  case class Number(val n: Int) extends Expr 
+  
+  def main(args: Array[String]): Unit = Sum(Number(2), Number(1)).show
+}

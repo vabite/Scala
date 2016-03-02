@@ -1,0 +1,61 @@
+compile
+test
+et/scala-2.11/classes...
+[warn] there was one feature warning; re-run with -feature for details
+[warn] one warning found
+[info] AnagramsSuite:
+[info] - wordOccurrences: abcd
+[info] - wordOccurrences: Robert
+[info] - sentenceOccurrences: abcd e
+[info] - dictionaryByOccurrences.get: eat
+[info] - word anagrams: married
+[info] - word anagrams: player
+[info] - subtract: lard - r *** FAILED ***
+[info]   scala.NotImplementedError: an implementation is missing
+[info]   at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)
+[info]   at forcomp.Anagrams$.subtract(Anagrams.scala:111)
+[info]   at forcomp.AnagramsSuite$$anonfun$7.apply$mcV$sp(AnagramsSuite.scala:46)
+[info]   at forcomp.AnagramsSuite$$anonfun$7.apply(AnagramsSuite.scala:42)
+[info]   at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)
+[info]   at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)
+[info]   at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
+[info]   at org.scalatest.Transformer.apply(Transformer.scala:22)
+[info]   at org.scalatest.Transformer.apply(Transformer.scala:20)
+[info]   ...
+[info] - combinations: [] *** FAILED ***
+[info]   List() did not equal List(List()) (AnagramsSuite.scala:51)
+[info] - combinations: abba *** FAILED ***
+[info]   Set() did not equal Set(List((a,1)), List((b,1)), List((b,2)), List((a,1), (b,1)), List(), List((a,2), (b,1)), List((a,2)), List((a,1), (b,2)), List((a,2), (b,2))) (AnagramsSuite.scala:67)
+[info] - sentence anagrams: [] *** FAILED ***
+[info]   scala.NotImplementedError: an implementation is missing
+[info]   at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)
+[info]   at forcomp.Anagrams$.sentenceAnagrams(Anagrams.scala:153)
+[info]   at forcomp.AnagramsSuite$$anonfun$10.apply$mcV$sp(AnagramsSuite.scala:73)
+[info]   at forcomp.AnagramsSuite$$anonfun$10.apply(AnagramsSuite.scala:71)
+[info]   at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)
+[info]   at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)
+[info]   at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
+[info]   at org.scalatest.Transformer.apply(Transformer.scala:22)
+[info]   at org.scalatest.Transformer.apply(Transformer.scala:20)
+[info]   ...
+[info] - sentence anagrams: Linux rulez *** FAILED ***
+[info]   scala.NotImplementedError: an implementation is missing
+[info]   at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)
+[info]   at forcomp.Anagrams$.sentenceAnagrams(Anagrams.scala:153)
+[info]   at forcomp.AnagramsSuite$$anonfun$11.apply$mcV$sp(AnagramsSuite.scala:100)
+[info]   at forcomp.AnagramsSuite$$anonfun$11.apply(AnagramsSuite.scala:76)
+[info]   at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)
+[info]   at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)
+[info]   at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
+[info]   at org.scalatest.Transformer.apply(Transformer.scala:22)
+[info]   at org.scalatest.Transformer.apply(Transformer.scala:20)
+[info]   ...
+[info] ScalaTest
+test
+run
+test
+checkStyle
+styleCheck
+test
+run
+test
